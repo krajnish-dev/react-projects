@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import axios from "axios";
-import Link from "next/link";
+//import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 export default function VerifyEmailPage() {
@@ -13,9 +14,9 @@ export default function VerifyEmailPage() {
         try {
             await axios.post('/api/users/verifyemail', { token });
             setVerified(true);
-        } catch (error: any) {
+        } catch (error) {
             setError(true);
-            console.log(error.response.data);
+            console.log(error);
         }
     };
 
